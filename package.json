@@ -5,7 +5,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "npm-run-all test:*",
+    "test:tsc": "tsc",
+    "test:jest": "jest -u",
+    "test:eslint": "eslint --ext .ts,.tsx src/"
   },
   "dependencies": {
     "react": "^18.0.0",
