@@ -15,5 +15,10 @@ export default defineConfig({
     svgr({
       exportAsDefault: true,
     })
-  ]
+  ],
+  server: {
+    watch: {
+      usePolling: true,
+    },
+  },
 })

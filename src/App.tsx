@@ -1,8 +1,11 @@
 /**
  * IMPORTS
  */
+import {ApolloProvider} from '@apollo/client';
 import React from 'react';
-import {Event} from 'src/pages/Event';
+import {BrowserRouter} from 'react-router-dom';
+import {clientAPI} from 'src/lib/apollo';
+import {Router} from 'src/Router';
 
 
 /**
@@ -18,7 +21,11 @@ function App (): JSX.Element
 {
   // return app component
   return (
-    <Event />
+    <ApolloProvider client={clientAPI}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </ApolloProvider>
   );
 }
 

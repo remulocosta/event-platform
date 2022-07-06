@@ -1,10 +1,11 @@
 /**
  * IMPORTS
  */
-import React from 'react';
 import {isPast} from 'date-fns';
 import {format} from 'date-fns';
 import ptBr from 'date-fns/locale/pt-BR';
+import React from 'react';
+import {Link} from 'react-router-dom';
 import {CheckCircle} from 'phosphor-react';
 import {Lock} from 'phosphor-react';
 
@@ -48,12 +49,12 @@ function Lesson (props: ILessonProps): JSX.Element
 
   // return component
   return (
-    <a href="#">
+    <Link to={`/event/lesson/${props.slug}`} className='group'>
       <span className='text-gray-300'>
         {availableDateFormatted}
       </span>
 
-      <div className='rounded border border-gray-500 p-4 mt-2'>
+      <div className='rounded border border-gray-500 p-4 mt-2 group-hover:border-green-500'>
         <header className='flex items-center justify-between'>
           {isLessonAvailable === true ? (
             <span className='text-sm text-blue-500 font-medium flex items-center gap-2'>
@@ -76,7 +77,7 @@ function Lesson (props: ILessonProps): JSX.Element
           {props.title}
         </strong>
       </div>
-    </a>
+    </Link>
   );
 }
 
